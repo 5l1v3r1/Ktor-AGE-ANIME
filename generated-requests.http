@@ -1,0 +1,119 @@
+### 用户注册
+POST http://127.0.0.1:8080/v1/accounts/signup
+Content-Type: application/json
+custom-header: xihantest
+
+{
+  "id": 1,
+  "name": "xihan",
+  "pass": "12345678",
+  "email": "1s@qq.com",
+  "portraitUrl": "https://cdn.jsdelivr.net/gh/xihan123/AGE@master/images/tx.jpg",
+  "favoriteData": {
+    "list": [],
+    "allSize": 0
+  },
+  "historyData": {
+    "list": [],
+    "allSize": 0
+  },
+  "chaseAnimeData": {
+    "list": [],
+    "allSize": 0
+  },
+  "created_at": "2022-04-15 01:11:04"
+}
+
+
+### 用户注销
+DELETE http://127.0.0.1:8080/v1/accounts/cancel?name=1&pass=12345678
+custom-header: xihantest
+
+### 用户登录
+GET http://127.0.0.1:8080/v1/accounts/login?name=1&pass=12345678
+custom-header: xihantest
+
+
+### 用户忘记密码
+GET http://127.0.0.1:8080/v1/accounts/forget?name=xihan&email=srxqzxs@vip.qq.com
+custom-header: xihantest
+
+
+### 用户修改密码或者邮箱
+POST http://127.0.0.1:8080/v1/accounts/edit?newPass=12345678&newEmail=1s@qq.com
+custom-header: xihantest
+Content-Type: application/json
+
+{
+  "id": 0,
+  "name": "1",
+  "pass": "12345678",
+  "email": "1ss@qq.com",
+  "created_at": ""
+}
+
+### 添加收藏 20140053
+POST http://127.0.0.1:8080/v1/accounts/favourite?name=1&pass=Thk/J57TmttsZYaEHOAksw==&aid=
+custom-header: xihantest
+Content-Type: application/json
+
+[
+  "20210258",
+  "20220065",
+  "20220138",
+  "20220064",
+  "20190076",
+  "20220014",
+  "20220080",
+  "20220055",
+  "20220254",
+  "20130015",
+  "20200104",
+  "20220167",
+  "20220213",
+  "20220189",
+  "20200185",
+  "20210107"
+]
+
+
+### 查看收藏
+GET http://127.0.0.1:8080/v1/accounts/favourite?name=1&pass=Thk/J57TmttsZYaEHOAksw==&page=1
+custom-header: xihantest
+Content-Type: application/json
+
+
+### 删除收藏 20210258
+DELETE http://127.0.0.1:8080/v1/accounts/favourite?name=1&pass=Thk/J57TmttsZYaEHOAksw==&aid=
+custom-header: xihantest
+Content-Type: application/json
+
+[
+  "20210258",
+  "20220065",
+  "20220138",
+  "20220064",
+  "20190076",
+  "20220014",
+  "20220080",
+  "20220055",
+  "20220254",
+  "20130015",
+  "20200104",
+  "20220167",
+  "20220213",
+  "20220189",
+  "20200185",
+  "20210107"
+]
+
+
+### 查看信息
+GET http://127.0.0.1:8080/v1/info
+custom-header: xihantest
+
+### 查看历史记录
+GET http://127.0.0.1:8080/v1/accounts/history?name=1&pass=Thk/J57TmttsZYaEHOAksw==&page=0
+custom-header: xihantest
+Content-Type: application/json
+
